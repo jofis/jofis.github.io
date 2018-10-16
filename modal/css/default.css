@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700);
+
+body {
+    font-family: Roboto, Helvetica, sans-serif;
+    color: #4A4F5A;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+/* The Modal (background) */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    max-width: 630px;
+    min-width: 320px;
+    height: auto;
+    z-index: 2000; /* Sit on top */
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+
+    
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: auto;
+    padding: 0;
+    border-radius: 5px;
+    width: 80%;
+
+}
+
+.show {
+    visibility: visible;
+}
+.modal-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    background: rgba(31, 37, 50,0.8);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.show ~ .modal-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Effect 1: Fade in and scale up */
+.effect-1 .modal-content {
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.show.effect-1 .modal-content {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+
+
+/* The Close Button */
+.close {
+    color: #686C74;
+    float: right;
+    font-size: 40px;
+    font-weight: 100;
+    top: 10px;
+    left: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: #2E333F;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 16px 24px;
+}
+
+.modal-body {
+    padding: 16px 24px;
+    overflow: auto; /* Enable scroll if needed */
+    max-height: calc(100% - 80px);
+}
+
+.modal-footer {
+    padding: 16px 24px;
+    border-top: solid 1px #ddd;
+}
+
+
+
+
+/**********************************
+    Buttons
+**********************************/
+
+.button {
+  position: relative;
+  border: 1px solid undefined;
+  background: initial;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  color: #005CB9;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: Roboto, Helvetica, sans-serif;
+  height: 32px;
+  padding: 0 16px;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+.button:hover:not(:disabled):not(:active) {
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+.button:active:not(:disabled) {
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3) inset;
+}
+.button--primary {
+  background-color: #005CB9;
+  border-color: #005CB9;
+  color: #FFFFFF;
+}
+.button--primary:hover:not(:disabled) {
+  background-color: #004A94;
+  border: 1px solid #004A94;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+.button--primary:active:not(:disabled) {
+  background-color: #004A94;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3) inset;
+}
+
+
+.button-group {
+
+}
+
+.button-group button {
+    margin-right: 8px;
+}
+.button-group button:last-child {
+    margin-right: 0;
+}
