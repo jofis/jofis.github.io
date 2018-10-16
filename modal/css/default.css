@@ -105,17 +105,21 @@ body {
 }
 
 .modal-header {
-    padding: 16px 24px;
+    padding: 16px 26px;
+    font-weight: 400;
+    font-size: 19px;
 }
 
 .modal-body {
-    padding: 16px 24px;
+    padding: 16px 26px;
     overflow: auto; /* Enable scroll if needed */
     max-height: calc(100% - 80px);
+    font-weight: 300;
+    font-size: 15px;
 }
 
 .modal-footer {
-    padding: 16px 24px;
+    padding: 16px 26px;
     border-top: solid 1px #ddd;
 }
 
@@ -177,3 +181,44 @@ body {
 .button-group button:last-child {
     margin-right: 0;
 }
+
+
+
+
+/*********************************
+  CONTAINER
+*********************************/
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+}
+.container:after,
+.container-fluid:after {
+  clear: both;
+}
+
+
+
+
