@@ -1,11 +1,13 @@
 
-/* Button Row Template */
-var button_row = $(".row");
-
-
 $(function() {
 
-	
+	// Button Row Template
+	var button_row = $(".row");
+
+
+	/**********************************
+		Functions
+	**********************************/
 
 	function openModal(){
 		$("#myModal").addClass("show");
@@ -17,10 +19,6 @@ $(function() {
 	function helloWorld() {
 		alert("Hello World!");
 	}
-
-
-
-
 	function addRow() {
 		button_row.clone(true, true).appendTo("#buttonRows");
 	}
@@ -28,106 +26,76 @@ $(function() {
 		button.closest(".row").remove();
 	}
 
+
+	/**********************************
+		Event Listeners
+	**********************************/
+
+	// Add button row
 	$(".add").on("click", function(){
 		addRow();
 		event.preventDefault();
 	});
+
+	// Remove button row
 	$(".remove").on("click", function(e){
 		removeRow( e.target);
 	});
 
-	// Close when close button is clicked
+	// Close modal when close button is clicked
 	$("#closeBtn").on("click", function(){
 		closeModal();
 	});
 
-
-	// Close when esc key is pressed
+	// Close modal when esc key is pressed
 	$(document).on('keyup',function(evt) {
 	    if (evt.keyCode == 27) {
 	       closeModal();
 	    }
 	});
 
-
-	//Set to close when the document is clicked anywhere...Except for when the modal itself is clicked
+	// Set to close when the document is clicked anywhere...Except for when the modal itself is clicked
 	$(document).click(function() { closeModal(); });
 	$("#myModal").click(function(event) { event.stopPropagation(); });
 
 
 
-	$( "form" ).submit(function( event ) {
+	/**********************************
+		Form Submitted
+	**********************************/
 
+	$( "form" ).submit(function( event ) {
 
 		//Set the title
 		$( "#_title" ).text( $('input[name="title"]').val() || "No title provided" );
 
-
 		//Set the content
-		$( "#_content" ).html( $('input[name="content"]').val() || "No content provided" );
+		$( "#_content" ).html( $('textarea[name="content"]').val() || "No content provided" );
 		//TODO: Depending on the context of this form, we may need to sanitize the html input to safeguard against malicious script insertions!!!
-
 
 		//Add the buttons
 		var button_labels = $('input[name="button-label"]');
 		var button_styles = $('select[name="button-style"]');
 		var button_callbacks = $('select[name="button-callback"]');
 
-		//console.log(button_labels[0].value);
-
 		var arrayLength = button_labels.length;
 		for (var i = 0; i < arrayLength; i++) {
-			//console.log(button_labels[i].value + "|" + button_styles[i].value + "|" + button_callbacks[i].value);
-		    var btn = $('<button class="button">' + button_labels[i].value + '</button>');
+			var btn = $('<button class="button">' + button_labels[i].value + '</button>');
 		    if (button_styles[i].value == "primary") btn.addClass("button--primary");
 		    btn.on("click", eval(button_callbacks[i].value) );
 		    $(".modal-footer .button-group").append(btn);
 		}
 
+		//Adjust footer appearance if no buttons
+		$(".modal-footer").toggleClass("has-buttons", arrayLength > 0)
 
-
-
-
-
-	  var fields = $( this ).serializeArray();
-
-	  console.log(fields);
-
-	  $.each( fields, function( i, field ) {
-	    //console.log( field.name + " = " + field.value);
-	    if (field.name == "title") {
-		    $( "#_title" ).text( field.value || "Default " + field.name );
-		}
-		else if (field.name == "content") {
-		    $( "#_content" ).html( field.value || "Default " + field.name );
-		}
-		// else if (field.name == "button-label") {
-		//     //$( "#_" + field.name ).html( field.value || "Default " + field.name );
-		//     var btn = $('<button class="button">' + field.value + '</button>');
-		//     //btn.addClass("button--primary");
-		//     btn.on("click", closeModal);
-		//     $(".modal-footer .button-group").append(btn);
-		// }
-	    
-
-
-
-	 });
-
-
-
-
-
-
-
-
-
+		//Open the modal
+		openModal();
 	  
-	  openModal();
-	  
-	  event.preventDefault();
+		event.preventDefault();
 	});
 
 
 
 });
+

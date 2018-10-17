@@ -1,6 +1,8 @@
 # Welcome to my GitHub playground
 
 ## Modal Generator Assignment
-You can view the code above in the [modal](https://github.com/jofis/jofis.github.io/tree/master/modal) directory.
 
-Or you can [see the modal generator in action](https://jofis.github.io/modal/)!
+Check out the [demo](https://jofis.github.io/modal/)!
+
+You can also clone this repo and open index.html in a web browser if you want to tinker with the source code.
+

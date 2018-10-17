@@ -129,9 +129,11 @@ body {
 
 .modal-footer {
     padding: 16px 24px 12px 24px;
-    border-top: solid 1px #ddd;
+    border-top: solid 1px #fff;
 }
-
+.modal-footer.has-buttons {
+    border-top-color: #ddd;
+}
 
 
 
