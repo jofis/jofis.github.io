@@ -1,4 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500);
+
+
+/**********************************
+    General
+**********************************/
 
 body {
     font-family: Roboto, Helvetica, sans-serif;
@@ -6,7 +11,14 @@ body {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.25;
+    background: #EDEEEF;
 }
+
+
+
+/**********************************
+    Modal
+**********************************/
 
 /* The Modal (background) */
 .modal {
@@ -16,8 +28,7 @@ body {
     width: 50%;
     max-width: 630px;
     min-width: 320px;
-    height: auto;
-    z-index: 2000; /* Sit on top */
+    z-index: 2000;
     visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -26,7 +37,6 @@ body {
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-
     
 }
 
@@ -36,9 +46,8 @@ body {
     background-color: #fff;
     margin: auto;
     padding: 0;
-    border-radius: 5px;
-    width: 80%;
-
+    border-radius: 3px;
+    width: 90%;
 }
 
 .show {
@@ -84,19 +93,16 @@ body {
     opacity: 1;
 }
 
-
-
-
 /* The Close Button */
 .close {
+    position: fixed;
     color: #686C74;
     float: right;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 100;
-    top: 10px;
-    left: 10px;
+    top: 16px;
+    right: 24px;
 }
-
 .close:hover,
 .close:focus {
     color: #2E333F;
@@ -105,21 +111,24 @@ body {
 }
 
 .modal-header {
-    padding: 16px 26px;
-    font-weight: 400;
-    font-size: 19px;
+    padding: 32px 42px 16px 32px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.1;
+    overflow-wrap: break-word;
 }
 
 .modal-body {
-    padding: 16px 26px;
-    overflow: auto; /* Enable scroll if needed */
-    max-height: calc(100% - 80px);
-    font-weight: 300;
-    font-size: 15px;
+    padding: 0 32px 8px 32px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-y: auto; /* Enable scroll if needed */
+    height: 250px;
 }
 
 .modal-footer {
-    padding: 16px 26px;
+    padding: 16px 24px 12px 24px;
     border-top: solid 1px #ddd;
 }
 
@@ -171,12 +180,9 @@ body {
 }
 
 
-.button-group {
-
-}
-
 .button-group button {
-    margin-right: 8px;
+    margin-right: 16px;
+    margin-bottom: 4px;
 }
 .button-group button:last-child {
     margin-right: 0;
@@ -188,9 +194,10 @@ body {
 /*********************************
   CONTAINER
 *********************************/
+
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 16px;
+  padding-left: 16px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -204,11 +211,6 @@ body {
     width: 970px;
   }
 }
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
 .container:before,
 .container:after {
   display: table;
@@ -218,6 +220,40 @@ body {
 .container-fluid:after {
   clear: both;
 }
+.row {
+  border-bottom: solid 1px #ccc;
+  margin-bottom: 4px;
+}
+.row input[type=text], .row select {
+  margin-right: 8px;
+  width: auto;
+}
+
+
+
+/*********************************
+  FORM
+*********************************/
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  margin-bottom: 8px;
+  font-size: 14px;
+  background-color: #fff;
+}
+select {
+  height: 35px;
+}
+label {
+  margin: 8px 0;
+  display: block;
+  font-weight: 500;
+}
+
 
 
 
